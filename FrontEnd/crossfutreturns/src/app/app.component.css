@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+.lista {
+  padding: 50px 80px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+h1 {
+  font-size: 29px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ff6600;
+}
+
+h3 {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 22px;
+}
+h1,
+h3 {
+  border-bottom: 5px solid #ff6600;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
