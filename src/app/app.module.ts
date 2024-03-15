@@ -16,9 +16,13 @@ import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'moment/locale/br';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HomeComponent } from './views/home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +38,7 @@ import 'moment/locale/br';
     MatTableModule,
     BrowserAnimationsModule,
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
