@@ -15,6 +15,7 @@ export class HomeComponent {
 
   @ViewChild('table') table: any;
   showFiller: any;
+  mostrarTabela: boolean | undefined;
 
   constructor(private fb: FormBuilder) {
     this.formCrossfut = fb.group({
@@ -54,6 +55,9 @@ export class HomeComponent {
     console.log(this.crossfuters);
 
     this.table.renderRows();
+  }
+  abrirTabela() {
+    this.mostrarTabela = true;
   }
 }
 interface Crossfuter {

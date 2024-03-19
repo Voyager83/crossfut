@@ -24,6 +24,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ElementDialogComponent } from './shared/element-dialog/element-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatActionList, MatListItem, MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HeaderComponent,
     FooterComponent,
     ElementDialogComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSidenavModule,
     MatToolbarModule,
     MatDialogModule,
+    MatDividerModule,
+    MatActionList,
+    MatListModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

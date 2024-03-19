@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './element-dialog.component.css'
 })
 export class ElementDialogComponent {
-element!:
+//element!:
 }
