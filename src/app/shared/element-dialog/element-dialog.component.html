@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Create Elkemtn</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Numero</mat-label>
+    <input matInput [(ngModel)]="data.Numero">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Idade</mat-label>
+    <input matInput [(ngModel)]="data.dataNascimento">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Turno</mat-label>
+    <input matInput [(ngModel)]="data.turno">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+</mat-dialog-actions>

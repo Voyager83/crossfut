@@ -20,9 +20,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ElementDialogComponent } from './shared/element-dialog/element-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    ElementDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,8 +47,14 @@ import { FooterComponent } from './shared/footer/footer.component';
     MatButtonModule,
     MatTableModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatDialogModule,
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, provideAnimationsAsync()],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    provideAnimationsAsync(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
