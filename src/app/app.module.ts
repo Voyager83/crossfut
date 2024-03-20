@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatActionList, MatListItem, MatListModule} from '@angular/material/list';
+import { TabelaComponent } from './tabela/tabela.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {MatActionList, MatListItem, MatListModule} from '@angular/material/list'
     FooterComponent,
     ElementDialogComponent,
     SidenavComponent,
+    TabelaComponent,
   ],
   imports: [
     BrowserModule,
