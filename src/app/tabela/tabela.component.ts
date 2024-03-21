@@ -8,7 +8,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TabelaComponent {
   title = 'crossfutreturns';
-  displayedColumns: string[] = ['id', 'nome', 'turno', 'dataNascimento'];
+  displayedColumns: string[] = [
+    'id',
+    'nome',
+    'turno',
+    'dataNascimento',
+    'telefone',
+    'rg',
+    'actions',
+  ];
 
   formCrossfut: FormGroup;
   crossfuters: Crossfuter[] = [];
@@ -69,3 +77,6 @@ interface Crossfuter {
   rg: number;
   objetivos: string;
 }
+//deleteElement(position: number): void{
+
+//}

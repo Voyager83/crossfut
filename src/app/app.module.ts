@@ -25,10 +25,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ElementDialogComponent } from './shared/element-dialog/element-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatActionList, MatListItem, MatListModule} from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import {
+  MatActionList,
+  MatListItem,
+  MatListModule,
+} from '@angular/material/list';
 import { TabelaComponent } from './tabela/tabela.component';
-
+import { InputCamposComponent } from './input-campos/input-campos.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,7 @@ import { TabelaComponent } from './tabela/tabela.component';
     ElementDialogComponent,
     SidenavComponent,
     TabelaComponent,
+    InputCamposComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +66,8 @@ import { TabelaComponent } from './tabela/tabela.component';
     MatDividerModule,
     MatActionList,
     MatListModule,
+    MatIconModule,
+    MatListItem,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
