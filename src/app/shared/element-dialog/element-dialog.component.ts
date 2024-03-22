@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Crossfuter } from '../../tabela/tabela.component';
 
 @Component({
   selector: 'app-element-dialog',
   templateUrl: './element-dialog.component.html',
-  styleUrl: './element-dialog.component.css'
+  styleUrl: './element-dialog.component.css',
 })
 export class ElementDialogComponent {
-//element!:
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { crossfuter: Crossfuter }
+  ) {}
 }
