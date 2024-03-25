@@ -1,5 +1,11 @@
-<h1>Wel Come, Ré</h1>
-<h3>Faça seu cadastro</h3>
+<div>
+  <h1>Wel Come, Ré</h1>
+  <h3>Faça seu cadastro</h3>
+  <button mat-icon-button color="" routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
+
 <div>
   <div class="input">
     <form
@@ -45,6 +51,14 @@
           <mat-option value="manha">Manhã</mat-option>
           <mat-option value="tarde">Tarde</mat-option>
           <mat-option value="noite">Noite</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="tipoTel">
+        <mat-label>Tipo de contato:</mat-label>
+        <mat-select formControlName="Tipo Contato" matInput>
+          <mat-option value="celular">Celular</mat-option>
+          <mat-option value="telefone">Telefone</mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -111,6 +125,8 @@
       </button>
     </form>
   </div>
+
+  <!--   TABELA   -->
   <div class="lista">
     <table
       mat-table

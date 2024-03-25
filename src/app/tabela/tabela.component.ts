@@ -2,11 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
+  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ElementDialogComponent } from '../shared/element-dialog/element-dialog.component';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 export function dataNascimentoValidator(
   control: AbstractControl
@@ -26,16 +29,37 @@ export function dataNascimentoValidator(
   styleUrls: ['./tabela.component.css'],
 })
 export class TabelaComponent {
-  constructor(private fb: FormBuilder, private dialog: MatDialog) {
+  constructor(
+    private fb: FormBuilder,
+    private dialog: MatDialog,
+    private router: Router
+  ) {
     this.formCrossfut = fb.group({
       nome: ['', Validators.required],
       dataNascimento: [[new Date()], [Validators.required]],
       turno: [''],
-      telefone: ['', [Validators.required, this.validatePhoneNumber]],
+      tipoContato: [''],
+      telefone: ['', [Validators.required]], //this.validatePhoneNumber]],
       rg: [''],
       objetivos: [''],
     });
-
+    this.formCrossfut.get('tipoContato')?.valueChanges.subscribe((value) => {
+      const telefoneControl = this.formCrossfut.get('telefone');
+      if (value === 'celular') {
+        telefoneControl?.setValidators([
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(11),
+        ]);
+      } else if (value === 'telefone') {
+        telefoneControl?.setValidators([
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(9),
+        ]);
+      }
+      telefoneControl?.updateValueAndValidity();
+    });
     this.formCrossfut
       .get('dataNascimento')
       ?.setValidators(dataNascimentoValidator);
